@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-center bg-gray-800 p-2 text-gray-200 lg:h-[50vh]">
-      <section className="mx-auto flex h-full w-full max-w-7xl flex-col gap-10  p-3 py-10 text-center lg:flex-row lg:gap-6 lg:py-20 lg:text-left"></section>
+    <footer className="mx-auto flex max-w-7xl items-center justify-center border-t border-gray-600 bg-gray-800 p-2 lg:h-[50vh]">
+      <section className="font-poppins flex h-full w-full max-w-7xl flex-col items-center justify-center">
+        Pawel Kowalinski - 2024
+      </section>
     </footer>
   );
 };

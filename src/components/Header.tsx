@@ -1,6 +1,7 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Icon from "../utils/Icon";
 
 type NavLinkRenderProps = {
   isActive: boolean;
@@ -29,7 +30,7 @@ const Header = () => {
       {/* Header hack - set max-width first then mx-auto, set height using padding */}
       <header
         ref={parentAnimate}
-        className="mx-auto w-full max-w-7xl px-4 py-6 font-mono"
+        className="mx-auto w-full max-w-7xl border-b border-gray-600 px-4 py-6 font-mono"
       >
         {/* Desktop navbar */}
         <div className="flex items-center justify-between font-medium">
@@ -56,11 +57,13 @@ const Header = () => {
           <nav className="hidden items-center lg:flex [&>span:not(:first-child)]:ml-4">
             <span>
               <NavLink to="/login" className={activeLinkCallback}>
-                Log In
+                <Icon type="linkedIn" />
               </NavLink>
             </span>
-            <span className=" bg-orange-500 px-4 py-2 font-semibold  text-white shadow-[5px_5px_0_0_rgba(0,0,0,.2)] duration-150 hover:brightness-95 active:scale-95 active:shadow-none">
-              <NavLink to="/register">Register</NavLink>
+            <span>
+              <NavLink to="/register" className={activeLinkCallback}>
+                <Icon type="github" />
+              </NavLink>
             </span>
           </nav>
           {/* Mobile navbar menu button */}
