@@ -8,7 +8,8 @@ Tech stack:
 -   TypeScript
 -   TailwindCSS
 
-Portfolio consists of:
+Portfolio projects:
 
--   Exemplary car rental website
--   React playground
+-   Car rental Website - https://portfolio-car-rental.vercel.app/
+-   React Playground - https://mrlzzz.github.io/vite-project/
+-   Landing Pages - https://mrlzzz.github.io/react-landing-page/
