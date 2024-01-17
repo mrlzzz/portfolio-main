@@ -1,7 +1,7 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Icon from "../utils/Icon";
+import Icon from "../../utils/Icon";
 
 type NavLinkRenderProps = {
   isActive: boolean;
