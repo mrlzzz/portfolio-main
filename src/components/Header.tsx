@@ -34,7 +34,7 @@ const Header = () => {
       >
         {/* Desktop navbar */}
         <div className="flex items-center justify-between font-medium">
-          <nav className=" hover:text-orange-500">
+          <nav className="transition-all hover:text-red-400">
             <NavLink to="/">{"dev > pawel"}</NavLink>
           </nav>
           <nav className="hidden lg:flex [&>span:not(:first-child)]:ml-4">
@@ -56,14 +56,20 @@ const Header = () => {
           </nav>
           <nav className="hidden items-center lg:flex [&>span:not(:first-child)]:ml-4">
             <span>
-              <NavLink to="/login" className={activeLinkCallback}>
+              <a
+                href="https://www.linkedin.com/in/pawel-kowalinski/"
+                className="transition-colors hover:text-red-400"
+              >
                 <Icon type="linkedIn" />
-              </NavLink>
+              </a>
             </span>
             <span>
-              <NavLink to="/register" className={activeLinkCallback}>
+              <a
+                href="https://github.com/mrlzzz/"
+                className="transition-colors hover:text-red-400"
+              >
                 <Icon type="github" />
-              </NavLink>
+              </a>
             </span>
           </nav>
           {/* Mobile navbar menu button */}
