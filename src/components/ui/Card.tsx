@@ -10,7 +10,7 @@ type CardProps = {
     description: string;
     img: {
       src: string;
-      position?: string;
+      position: string;
     }[];
     link: string;
     github: string;
@@ -20,12 +20,14 @@ type CardProps = {
 
 const Card = ({ data }: CardProps) => {
   const { title, techStack, description, img, link, github } = data;
-  const techStackList = techStack.map((e) => {
-    return <Badge title={e} />;
+  const techStackList = techStack.map((e, idx) => {
+    return <Badge key={idx} title={e} />;
   });
 
+  if (img[0].position === "left") console.log("why");
+
   return (
-    <div className="relative m-6 flex h-fit flex-col justify-between gap-10 border border-gray-600 bg-gray-800 p-4 active:shadow-none">
+    <div className="relative m-6 flex h-fit flex-col justify-between gap-10 border border-gray-600 bg-gray-800 p-4 hover:brightness-105 active:shadow-none">
       <div>
         <h1 className="text-xl font-bold">{title}</h1>
         <p className="text-gray-400">{description}</p>

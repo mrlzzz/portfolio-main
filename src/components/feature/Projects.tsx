@@ -1,8 +1,8 @@
 import Card from "../ui/Card";
 import projects from "../../data/projectData";
 const Projects = () => {
-  const cards = projects.map((e) => {
-    return <Card data={e} />;
+  const cards = projects.map((e, idx) => {
+    return <Card key={idx} data={e} />;
   });
 
   return (
