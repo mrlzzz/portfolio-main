@@ -1,13 +1,17 @@
 // import { useEffect, useState } from "react";
 
 import Icon from "../../utils/Icon";
+import Badge from "./Badge";
 
 type CardProps = {
   data: {
     title: string;
     techStack: string[];
     description: string;
-    img: string[];
+    img: {
+      src: string;
+      position?: string;
+    }[];
     link: string;
     github: string;
     backend?: string;
@@ -15,43 +19,35 @@ type CardProps = {
 };
 
 const Card = ({ data }: CardProps) => {
-  //   const [imageIndex, setImageIndex] = useState(0);
-
-  //   useEffect(() => {
-  //     if (data.img.length > 1) {
-  //       setInterval(() => {
-  //         setImageIndex(1);
-  //         console.log(data.img.length);
-  //       }, 5000);
-  //     }
-  //   }, [data.img.length]);
-
   const { title, techStack, description, img, link, github } = data;
   const techStackList = techStack.map((e) => {
-    return <li>{e}</li>;
+    return <Badge title={e} />;
   });
 
   return (
-    <a className="hover:brightness-110" href={link}>
-      <div className="m-4 flex gap-4 border border-gray-600 bg-gray-800 p-4">
+    <a className="relative transition-all active:scale-95" href={link}>
+      <div className="m-4 flex h-fit flex-col justify-between gap-10 border border-gray-600 bg-gray-800 p-4 active:shadow-none">
         <div>
-          <h1>{title}</h1>
-          <ul>
-            Tech stack:
+          <h1 className="text-xl font-bold">{title}</h1>
+          <p className="text-gray-400">{description}</p>
+          <div className="my-4 flex max-w-[300px] flex-wrap">
             {techStackList}
-          </ul>
-          <p>{description}</p>
-          <a href={github}>
-            <Icon type="github" />
-          </a>
+          </div>
+          <div className="absolute right-0 top-0 mx-1 flex gap-2 border border-gray-600 bg-gray-800 px-3 py-2">
+            <a href={github}>
+              <Icon type="github" />
+            </a>
+            <a href={link}>
+              <Icon type="link" />
+            </a>
+          </div>
         </div>
-        <div className="flex h-[250px] w-[400px] items-center">
-          <img
-            width="max-h-full max-w-full"
-            src={img[0]}
-            alt={`Screenshot of the ${title} project`}
-          />
-        </div>
+        {/* `object-fit` is fill by default */}
+        <img
+          className={`h-[250px] w-[350px] object-cover object-${img[0].position}  brightness-90 transition-all`}
+          src={img[0].src}
+          alt={`Screenshot of the ${title} project`}
+        />
       </div>
     </a>
   );
