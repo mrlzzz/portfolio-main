@@ -1,5 +1,6 @@
 // import { useEffect, useState } from "react";
 
+import { useEffect } from "react";
 import Icon from "../../utils/Icon";
 import Badge from "./Badge";
 
@@ -24,7 +25,9 @@ const Card = ({ data }: CardProps) => {
     return <Badge key={idx} title={e} />;
   });
 
-  if (img[0].position === "left") console.log("why");
+  useEffect(() => {
+    console.log(img[0].position);
+  }, [img]);
 
   return (
     <div className="relative m-6 flex h-fit flex-col justify-between gap-10 border border-gray-600 bg-gray-800 p-4 hover:brightness-105 active:shadow-none">

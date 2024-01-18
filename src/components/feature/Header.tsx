@@ -115,20 +115,26 @@ const Header = () => {
             >
               Contact
             </NavLink>
-            <NavLink
-              to="/login"
-              className={activeLinkCallback}
-              onClick={handleMobileMenuClick}
-            >
-              Log In
-            </NavLink>
-            <NavLink
-              to="/register"
-              className={activeLinkCallback}
-              onClick={handleMobileMenuClick}
-            >
-              Register
-            </NavLink>
+            {/*Mobile navbar line divider */}
+            <hr className="mb-4 ml-auto mt-5 h-px w-16 border-0 bg-gray-600 !p-0" />
+            <nav className="flex justify-end gap-2">
+              <span>
+                <a
+                  href="https://www.linkedin.com/in/pawel-kowalinski/"
+                  className="transition-colors hover:text-red-400"
+                >
+                  <Icon type="linkedIn" />
+                </a>
+              </span>
+              <span>
+                <a
+                  href="https://github.com/mrlzzz/"
+                  className="transition-colors hover:text-red-400"
+                >
+                  <Icon type="github" />
+                </a>
+              </span>
+            </nav>
           </div>
         ) : null}
       </header>
