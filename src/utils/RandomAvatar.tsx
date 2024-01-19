@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { avatarData } from "../data/avatarData";
 import getRandomInteger from "./getRandomInteger";
-import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { useInterval } from "usehooks-ts";
 
 type RandomAvatarProps = {
