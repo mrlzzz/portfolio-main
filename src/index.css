@@ -34,3 +34,28 @@ h5,
 h6 {
   font-family: "Poppins", sans-serif;
 }
+
+/*
+  
+  SVG pattern background
+
+  .about {
+    background: url("/src/assets/about/topography.svg");
+    background-position: fixed;
+    background-size: cover;
+  }
+   
+*/
+
+/* 
+  
+  Color pallette
+
+  Gray-200 rgb(229 231 235) - #E5E7EB
+  Gray-600 rgb(75 85 99) - #4B5563
+  Gray-800 rgb(31 41 55) - #1F2937
+
+  Accent Red-400 rgb(248 113 113) - #F87171
+  Accent - #52B788 (Mint) | #DDD92A (Yellow) 
+
+*/

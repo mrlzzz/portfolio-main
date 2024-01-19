@@ -18,7 +18,7 @@ const ErrorPage = () => {
     <>
       <Header />
       <div className="h-screen">
-        <div className="mx-auto my-10 flex w-fit flex-col border border-black p-4">
+        <div className="mx-auto my-10 flex w-fit flex-col border border-gray-600 p-4">
           <h1>Oops!</h1>
           <p>Sorry, an unexpected error has occurred.</p>
           <p>
