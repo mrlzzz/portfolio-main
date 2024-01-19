@@ -30,7 +30,7 @@ const Card = ({ data }: CardProps) => {
   }, [img]);
 
   return (
-    <div className="relative m-6 flex h-fit flex-col justify-between gap-10 border border-gray-600 bg-gray-800 p-4 hover:brightness-105 active:shadow-none">
+    <div className="relative mx-2 my-6 flex h-fit flex-col justify-between gap-10 border border-gray-600 bg-gray-800 hover:brightness-105 active:shadow-none lg:mx-6">
       <div className="absolute -right-3 -top-3 mx-1 flex gap-2 border border-gray-600 bg-gray-800 px-3 py-2">
         <a href={github}>
           <Icon type="github" />
@@ -39,14 +39,15 @@ const Card = ({ data }: CardProps) => {
           <Icon type="link" />
         </a>
       </div>
-      <div className="flex flex-col gap-4">
+
+      <div className="flex flex-col gap-4 p-4">
         <h1 className="text-xl font-bold">{title}</h1>
         <p className="max-w-[320px] text-pretty text-gray-400">{description}</p>
         <div className="flex max-w-[300px] flex-wrap">{techStackList}</div>
       </div>
       {/* `object-fit` is fill by default */}
       <img
-        className={`h-[250px] w-[350px] object-cover object-${img[0].position}  brightness-90 transition-all`}
+        className={`h-[250px] w-[370px] object-cover object-${img[0].position}  brightness-75 transition-all hover:brightness-90`}
         src={img[0].src}
         alt={`Screenshot of the ${title} project`}
       />

@@ -33,7 +33,7 @@ const one = (
           d="M15 20c2 1 4 1 6 0"
           stroke="#000000"
           fill="none"
-          stroke-linecap="round"
+          strokeLinecap="round"
         ></path>
         <rect
           x="13"
@@ -149,7 +149,7 @@ const three = (
           d="M15 21c2 1 4 1 6 0"
           stroke="#000000"
           fill="none"
-          stroke-linecap="round"
+          strokeLinecap="round"
         ></path>
         <rect
           x="13"
@@ -209,7 +209,7 @@ const four = (
           d="M15 21c2 1 4 1 6 0"
           stroke="#000000"
           fill="none"
-          stroke-linecap="round"
+          strokeLinecap="round"
         ></path>
         <rect
           x="14"
@@ -269,7 +269,7 @@ const five = (
           d="M15 19c2 1 4 1 6 0"
           stroke="#FFFFFF"
           fill="none"
-          stroke-linecap="round"
+          strokeLinecap="round"
         ></path>
         <rect
           x="10"
