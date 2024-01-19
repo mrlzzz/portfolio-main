@@ -21,7 +21,10 @@ const RandomAvatar = ({ className }: RandomAvatarProps) => {
   };
 
   return (
-    <div onClick={handleClick} className={`${className} w-fit transition-all`}>
+    <div
+      onClick={handleClick}
+      className={`${className} w-fit transition-all hover:brightness-75 active:scale-95 `}
+    >
       {avatarData[currentIndex]}
     </div>
   );

@@ -183,6 +183,7 @@ const mail = (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    className="transition-all hover:text-red-400"
   >
     <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
     <path d="M3 7l9 6l9 -6"></path>
@@ -200,6 +201,7 @@ const linkedIn = (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    className="transition-all hover:text-red-400"
   >
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
     <rect width="4" height="12" x="2" y="9" />

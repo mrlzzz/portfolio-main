@@ -1,3 +1,7 @@
+/*
+  https://boringavatars.com/
+*/
+
 const one = (
   <svg
     viewBox="0 0 36 36"
