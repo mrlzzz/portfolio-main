@@ -1,5 +1,5 @@
 import { useRouteError } from "react-router-dom";
-import Header from "../components/feature/Header";
+// import Header from "../components/feature/Header";
 import Footer from "../components/feature/Footer";
 
 type ErrorMessage = {
@@ -16,7 +16,7 @@ const ErrorPage = () => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="h-screen">
         <div className="mx-auto my-10 flex w-fit flex-col border border-gray-600 p-4">
           <h1>Oops!</h1>
