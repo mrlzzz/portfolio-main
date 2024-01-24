@@ -34,7 +34,7 @@ const Header = ({ navRefs }: HeaderProps) => {
   };
 
   const handleScrollIntoView = useCallback(
-    (ref: React.RefObject<HTMLHeadingElement>) => {
+    (ref: React.RefObject<HTMLElement>) => {
       ref?.current?.scrollIntoView({ behavior: "smooth" });
     },
     [],
@@ -130,30 +130,35 @@ const Header = ({ navRefs }: HeaderProps) => {
         {toggleMobileMenu ? (
           <div className="flex flex-col p-1 text-right lg:hidden [&>*]:py-1">
             <a
-              onClick={() => {
+              /* 
+                These onClicks are `async`, so the `scrollIntoView`
+                can calculate position only after mobile navbar toggles off,
+                otherwise calculated position is off.
+              */
+              onClick={async () => {
+                await handleMobileMenuClick();
                 handleScrollIntoView(navRefs.about);
                 handleSetIsActive("about");
-                handleMobileMenuClick();
               }}
               className={`${isActive === "about" ? "text-red-400" : ""} transition-colors hover:text-red-400`}
             >
               About
             </a>
             <a
-              onClick={() => {
+              onClick={async () => {
+                await handleMobileMenuClick();
                 handleScrollIntoView(navRefs.projects);
                 handleSetIsActive("projects");
-                handleMobileMenuClick();
               }}
               className={`${isActive === "projects" ? "text-red-400" : ""} transition-colors hover:text-red-400`}
             >
               Projects
             </a>
             <a
-              onClick={() => {
+              onClick={async () => {
+                await handleMobileMenuClick();
                 handleScrollIntoView(navRefs.contact);
                 handleSetIsActive("contact");
-                handleMobileMenuClick();
               }}
               className={`${isActive === "contact" ? "text-red-400" : ""} transition-colors hover:text-red-400`}
             >

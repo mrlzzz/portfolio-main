@@ -16,9 +16,9 @@ import { useRef } from "react";
 
 const RootLayout = () => {
   const navRefs = {
-    about: useRef<HTMLHeadingElement>(null),
-    projects: useRef<HTMLHeadingElement>(null),
-    contact: useRef<HTMLHeadingElement>(null),
+    about: useRef<HTMLElement>(null),
+    projects: useRef<HTMLElement>(null),
+    contact: useRef<HTMLElement>(null),
   };
 
   return (

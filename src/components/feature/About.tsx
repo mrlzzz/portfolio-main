@@ -3,14 +3,14 @@ import Section from "../ui/Section";
 import SectionTitle from "../ui/SectionTitle";
 
 type AboutProps = {
-  aboutRef: React.RefObject<HTMLHeadingElement>;
+  aboutRef: React.RefObject<HTMLElement>;
 };
 
 const About = ({ aboutRef }: AboutProps) => {
   return (
-    <Section>
+    <Section navRef={aboutRef}>
       <>
-        <SectionTitle text="About me" navRef={aboutRef} />
+        <SectionTitle text="About me" />
         {/* <hr className="absolute top-7 h-3 w-48 border-0 bg-gray-900"></hr> */}
 
         <div className="mx-auto flex h-[75vh] max-w-7xl flex-col divide-y divide-gray-700 border border-gray-600 lg:flex-row lg:divide-x lg:divide-y-0">
