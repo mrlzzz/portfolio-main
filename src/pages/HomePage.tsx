@@ -1,16 +1,20 @@
 import About from "../components/feature/About";
 import Contact from "../components/feature/Contact";
-// import Hero from "../components/feature/Hero";
 import Projects from "../components/feature/Projects";
+import { NavRefType } from "../components/types/NavRefType";
 
-const Home = () => {
+type HomePageProps = {
+  navRefs: NavRefType;
+};
+
+const HomePage = ({ navRefs }: HomePageProps) => {
   return (
     <main>
-      <About />
-      <Projects />
-      <Contact />
+      <About aboutRef={navRefs.about} />
+      <Projects projectsRef={navRefs.projects} />
+      <Contact contactRef={navRefs.contact} />
     </main>
   );
 };
 
-export default Home;
+export default HomePage;
