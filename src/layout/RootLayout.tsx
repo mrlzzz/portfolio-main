@@ -24,7 +24,6 @@ const RootLayout = () => {
   return (
     <>
       <Header navRefs={navRefs} />
-
       <HomePage navRefs={navRefs} />
       <Footer />
     </>
