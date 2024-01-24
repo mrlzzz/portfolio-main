@@ -2,12 +2,16 @@ import Icon from "../../utils/Icon";
 import Section from "../ui/Section";
 import SectionTitle from "../ui/SectionTitle";
 
+type ContactProps = {
+  contactRef: React.RefObject<HTMLHeadingElement>;
+};
+
 // className="mx-auto mb-20 mt-4 h-fit min-h-[50vh] max-w-[1500px] p-2 lg:mb-4"
-const Contact = () => {
+const Contact = ({ contactRef }: ContactProps) => {
   return (
     <Section>
       <>
-        <SectionTitle text="Contact" />
+        <SectionTitle text="Contact" navRef={contactRef} />
         {/* <hr className="absolute top-7 h-3 w-48 border-0 bg-gray-900"></hr> */}
 
         <div className="mx-auto flex h-[50vh] max-w-7xl flex-col items-center justify-center gap-2 border border-gray-600">

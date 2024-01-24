@@ -1,25 +1,48 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Icon from "../../utils/Icon";
+import { NavRefType } from "../types/NavRefType";
 
-type NavLinkRenderProps = {
-  isActive: boolean;
-  isPending: boolean;
-  isTransitioning: boolean;
+/*
+  At the moment, I have switched from NavLink into regular spans
+  for infra-page navigation using Element.scrollIntoView(). Thus, commented blocks.
+  I can go back it for cross-page navigation.
+*/
+
+// type NavLinkRenderProps = {
+//   isActive: boolean;
+//   isPending: boolean;
+//   isTransitioning: boolean;
+// };
+
+type HeaderProps = {
+  navRefs: NavRefType;
 };
 
-const activeLinkCallback = ({ isActive }: NavLinkRenderProps) => {
-  return isActive ? "text-red-400" : "";
-};
-
-const Header = () => {
-  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
+const Header = ({ navRefs }: HeaderProps) => {
+  const [toggleMobileMenu, setToggleMobileMenu] = useState<boolean>(false);
+  const [isActive, setIsActive] = useState<string>("about");
   const [parentAnimate] = useAutoAnimate();
 
   const handleMobileMenuClick = () => {
     setToggleMobileMenu(!toggleMobileMenu);
   };
+
+  const handleSetIsActive = (nav: string) => {
+    setIsActive(nav);
+  };
+
+  const handleScrollIntoView = useCallback(
+    (ref: React.RefObject<HTMLHeadingElement>) => {
+      ref?.current?.scrollIntoView({ behavior: "smooth" });
+    },
+    [],
+  );
+
+  // const activeLinkCallback = ({ isActive }: NavLinkRenderProps) => {
+  //   return isActive ? "text-red-400" : "";
+  // };
 
   const mobileMenuIconPath: string = toggleMobileMenu
     ? "M18 6 6 18 M6 6 18 18"
@@ -37,22 +60,34 @@ const Header = () => {
           <nav className="transition-all hover:text-red-400">
             <NavLink to="/">{"dev > pawel"}</NavLink>
           </nav>
-          <nav className="hidden lg:flex [&>span:not(:first-child)]:ml-4">
-            <span>
-              <NavLink to="/" className={activeLinkCallback}>
-                Home
-              </NavLink>
-            </span>
-            <span>
-              <NavLink to="/about" className={activeLinkCallback}>
-                About
-              </NavLink>
-            </span>
-            <span>
-              <NavLink to="/contact" className={activeLinkCallback}>
-                Contact
-              </NavLink>
-            </span>
+          <nav className="hidden lg:flex [&>a:not(:first-child)]:ml-4 [&>a]:cursor-pointer">
+            <a
+              onClick={() => {
+                handleScrollIntoView(navRefs.about);
+                handleSetIsActive("about");
+              }}
+              className={`${isActive === "about" ? "text-red-400" : ""} transition-colors hover:text-red-400`}
+            >
+              About
+            </a>
+            <a
+              onClick={() => {
+                handleScrollIntoView(navRefs.projects);
+                handleSetIsActive("projects");
+              }}
+              className={`${isActive === "projects" ? "text-red-400" : ""} transition-colors hover:text-red-400`}
+            >
+              Projects
+            </a>
+            <a
+              onClick={() => {
+                handleScrollIntoView(navRefs.contact);
+                handleSetIsActive("contact");
+              }}
+              className={`${isActive === "contact" ? "text-red-400" : ""} transition-colors hover:text-red-400`}
+            >
+              Contact
+            </a>
           </nav>
           <nav className="hidden items-center lg:flex [&>span:not(:first-child)]:ml-4">
             <span>
@@ -94,27 +129,36 @@ const Header = () => {
         {/* Mobile navbar */}
         {toggleMobileMenu ? (
           <div className="flex flex-col p-1 text-right lg:hidden [&>*]:py-1">
-            <NavLink
-              to="/"
-              className={activeLinkCallback}
-              onClick={handleMobileMenuClick}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/about"
-              className={activeLinkCallback}
-              onClick={handleMobileMenuClick}
+            <a
+              onClick={() => {
+                handleScrollIntoView(navRefs.about);
+                handleSetIsActive("about");
+                handleMobileMenuClick();
+              }}
+              className={`${isActive === "about" ? "text-red-400" : ""} transition-colors hover:text-red-400`}
             >
               About
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className={activeLinkCallback}
-              onClick={handleMobileMenuClick}
+            </a>
+            <a
+              onClick={() => {
+                handleScrollIntoView(navRefs.projects);
+                handleSetIsActive("projects");
+                handleMobileMenuClick();
+              }}
+              className={`${isActive === "projects" ? "text-red-400" : ""} transition-colors hover:text-red-400`}
+            >
+              Projects
+            </a>
+            <a
+              onClick={() => {
+                handleScrollIntoView(navRefs.contact);
+                handleSetIsActive("contact");
+                handleMobileMenuClick();
+              }}
+              className={`${isActive === "contact" ? "text-red-400" : ""} transition-colors hover:text-red-400`}
             >
               Contact
-            </NavLink>
+            </a>
             {/*Mobile navbar line divider */}
             <hr className="mb-4 ml-auto mt-5 h-px w-16 border-0 bg-gray-600 !p-0" />
             <nav className="flex justify-end gap-2">

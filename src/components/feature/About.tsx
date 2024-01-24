@@ -2,11 +2,15 @@ import RandomAvatar from "../../utils/RandomAvatar";
 import Section from "../ui/Section";
 import SectionTitle from "../ui/SectionTitle";
 
-const About = () => {
+type AboutProps = {
+  aboutRef: React.RefObject<HTMLHeadingElement>;
+};
+
+const About = ({ aboutRef }: AboutProps) => {
   return (
     <Section>
       <>
-        <SectionTitle text="About me" />
+        <SectionTitle text="About me" navRef={aboutRef} />
         {/* <hr className="absolute top-7 h-3 w-48 border-0 bg-gray-900"></hr> */}
 
         <div className="mx-auto flex h-[75vh] max-w-7xl flex-col divide-y divide-gray-700 border border-gray-600 lg:flex-row lg:divide-x lg:divide-y-0">
