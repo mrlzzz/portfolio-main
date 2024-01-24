@@ -18,7 +18,7 @@ const About = ({ aboutRef }: AboutProps) => {
             <div className="flex items-center gap-5 ">
               <RandomAvatar />
               <div className="gap-2">
-                <h1 className="text-2xl lg:text-3xl">Pawel Kowalinski</h1>
+                <h1 className="text-2xl lg:text-3xl">Hi! I'm Pawel</h1>
                 <h2 className="text-sm text-gray-400 lg:text-base">
                   Software Engineer - Frontend
                 </h2>
