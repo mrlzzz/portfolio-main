@@ -23,7 +23,7 @@ const Card = ({ data }: CardProps) => {
   });
 
   return (
-    <div className="relative mx-2 mb-16 mt-4 flex h-fit flex-col justify-between gap-10 border border-gray-600 bg-gray-800 brightness-105 last:mb-6 active:shadow-none lg:mx-6 lg:mb-6">
+    <div className="relative mx-2 mb-16 mt-4 flex  h-fit flex-col justify-between gap-10 border border-gray-600 bg-gray-800 brightness-105 last:mb-6 active:shadow-none lg:mx-6 lg:mb-6">
       <div className="absolute -right-3 -top-3 mx-1 flex gap-2 border border-gray-600 bg-gray-800 px-3 py-2">
         <a href={github}>
           <Icon type="github" />

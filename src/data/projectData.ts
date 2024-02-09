@@ -30,6 +30,24 @@ const projects = [
     github: "https://github.com/mrlzzz/react-landing-page",
     backend: "",
   },
+
+  {
+    title: "3D Player",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Three.js",
+      "React-three-fiber",
+      "Jellyfin",
+    ],
+    description:
+      "Trying out Three.js wrapper in React! Nostalgic 3D model as an interactive Jellyfin client.",
+    img: [{ src: imgData.threeModel, position: "left" }],
+    link: "https://gucio-radio.vercel.app/",
+    github: "https://github.com/mrlzzz/gucio-radio",
+    backend: "",
+  },
   {
     title: "React Playground",
     techStack: [

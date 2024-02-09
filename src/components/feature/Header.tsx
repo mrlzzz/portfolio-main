@@ -44,7 +44,7 @@ const Header = ({ navRefs }: HeaderProps) => {
   //   return isActive ? "text-red-400" : "";
   // };
 
-  const mobileMenuIconPath: string = toggleMobileMenu
+  const mobileMenuIconPath = toggleMobileMenu
     ? "M18 6 6 18 M6 6 18 18"
     : "M4 6h16M4 12h16M4 18h16";
 

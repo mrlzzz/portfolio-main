@@ -16,11 +16,7 @@ const Projects = ({ projectsRef }: ProjectsProps) => {
     <Section navRef={projectsRef}>
       <>
         <SectionTitle text="Projects" />
-        {/* <hr className="absolute top-7 h-3 w-48 border-0 bg-gray-900"></hr> */}
-
-        <div className="mx-auto flex flex-wrap content-baseline justify-center">
-          {cards}
-        </div>
+        <div className="mx-auto flex flex-wrap justify-center">{cards}</div>
       </>
     </Section>
   );
